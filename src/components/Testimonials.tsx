@@ -14,7 +14,7 @@ export default function Testimonials() {
       category: 'imprimerie',
       rating: 5,
       comment:
-        'J\'ai fait imprimer et relier mon mémoire de fin d\'études de 120 pages ici. Le résultat est tout simplement irréprochable, l\'impression couleur est d\'une précision chirurgicale et la reliure plastique tient parfaitement !',
+        'J\'ai fait imprimer et relier mon mémoire de fin d\'études de 120 pages ici. Le résultat est tout simplement irréprochable,',
       serviceUsed: 'Impression & Reliure de Mémoire',
       date: 'Il y a 3 jours',
     },
@@ -80,14 +80,17 @@ export default function Testimonials() {
       ? testimonials
       : testimonials.filter((t) => t.category === activeFilter);
 
+  // Duplicate items to make seamless infinite continuous scroll loop
+  const marqueeItems = [...filteredTestimonials, ...filteredTestimonials];
+
   return (
     <section id="testimonials" className="py-24 bg-slate-50 relative overflow-hidden">
-      
+
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
@@ -113,23 +116,31 @@ export default function Testimonials() {
             <button
               key={tab.id}
               onClick={() => setActiveFilter(tab.id)}
-              className={`px-4 py-2 text-xs font-bold rounded-full border transition-all cursor-pointer ${
-                activeFilter === tab.id
+              className={`px-4 py-2 text-xs font-bold rounded-full border transition-all cursor-pointer ${activeFilter === tab.id
                   ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-500/20'
                   : 'bg-white border-slate-200 text-slate-700 hover:border-sky-300'
-              }`}
+                }`}
             >
               {tab.label}
             </button>
           ))}
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredTestimonials.map((t) => (
+      </div>
+
+      {/* Infinite Continuous Auto-Scrolling Marquee Container */}
+      <div className="relative w-full overflow-hidden py-4">
+
+        {/* Left & Right Gradient Shadows for Seamless Blur */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
+
+        {/* Continuous Animated Track */}
+        <div className="animate-marquee flex gap-6 px-4">
+          {marqueeItems.map((t, index) => (
             <div
-              key={t.id}
-              className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              key={`${t.id}-${index}`}
+              className="w-[320px] sm:w-[380px] flex-shrink-0 bg-white p-6 rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Rating & Quote Icon */}
@@ -153,7 +164,9 @@ export default function Testimonials() {
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-sm font-bold text-slate-900">{t.name}</span>
-                    <span title="Avis Vérifié"><CheckCircle className="w-3.5 h-3.5 text-sky-600" /></span>
+                    <span title="Avis Vérifié">
+                      <CheckCircle className="w-3.5 h-3.5 text-sky-600" />
+                    </span>
                   </div>
                   <span className="block text-[11px] text-slate-500 font-medium">{t.role}</span>
                   <span className="inline-block mt-1 text-[10px] text-sky-700 font-bold">
