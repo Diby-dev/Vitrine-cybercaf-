@@ -14,7 +14,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
       title: 'Navigation PC & Accès Internet Ultra Rapide',
       subtitle: 'Postes ergonomiques haut débit pour tous vos travaux et recherches',
       icon: Monitor,
-      image: '/images/hero.jpg',
+      image: '/images/cybe.jpg',
       price: '500 FCFA / Heure',
       features: [
         'Connexion Fibre Optique dédiée 1 Gbps',
@@ -29,7 +29,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
       title: 'Formations Informatiques & Bureautique',
       subtitle: 'Maîtrisez Microsoft Excel, Word, PowerPoint et l\'environnement Windows',
       icon: BookOpen,
-      image: '/images/training.jpg',
+      image: '/images/ex.jpg',
       price: '3 000 FCFA / Heure',
       features: [
         'Formation Excel : Formules, Tableaux Croisés Dynamiques, Graphiques',
@@ -44,7 +44,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
       title: 'Imprimerie, Photocopie & Scan HD',
       subtitle: 'Impression professionnelle de documents, thèses, brochures et scans haute définition',
       icon: Printer,
-      image: '/images/printing.jpg',
+      image: '/images/imp.jpg',
       price: 'À partir de 50 FCFA / page',
       features: [
         'Impression laser couleur & N/B aux formats A4 et A3',
@@ -59,7 +59,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
       title: 'Rédaction & Assistance Administrative',
       subtitle: 'Rédaction et mise en page soignée de CV, lettres de motivation et dossiers en ligne',
       icon: FileText,
-      image: '/images/redaction.jpg',
+      image: '/images/redact.jpg',
       price: 'À partir de 2 000 FCFA',
       features: [
         'Rédaction & Relecture de CV modernisés et percutants',
@@ -69,30 +69,17 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
         'Confidentialité absolue garantie par contrat d\'engagement',
       ],
     },
-    {
-      id: 'gaming',
-      title: 'Espace Gaming & Multimédia',
-      subtitle: 'PC hautes performances équipés des derniers composants pour joueurs et créateurs',
-      icon: Gamepad2,
-      image: '/images/hero.jpg',
-      price: '1 000 FCFA / Heure',
-      features: [
-        'Carte Graphique RTX Series & Écrans 240Hz',
-        'Claviers mécaniques RGB & Souris de précision',
-        'Jeux multijoueurs populaires préinstallés (League, CS2, Fortnite)',
-        'Espace streaming et visioconférence équipé',
-      ],
-    },
+
   ];
 
   return (
-    <section id="services" className="py-24 bg-slate-50 relative overflow-hidden">
-      
+    <section id="services" className="py-24 bg-[url('/images/back2.jpg')] bg-cover bg-center bg-no-repeat relative overflow-hidden">
+
       {/* Glow Overlay */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
@@ -101,7 +88,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
           <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Des Services Adaptés à <span className="text-gradient">Chacun de Vos Besoins</span>
           </h2>
-          <p className="mt-4 text-slate-600 text-base sm:text-lg font-medium">
+          <p className="mt-4 text-slate-900 text-base sm:text-lg font-medium">
             Découvrez nos 5 pôles d'activités conçus pour répondre efficacement aux exigences des particuliers, étudiants et entreprises.
           </p>
         </div>
@@ -125,7 +112,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                    
+
                     {/* Floating Badge */}
                     <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-sky-700 text-xs font-bold shadow-md">
                       {service.price}
@@ -179,7 +166,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
             <h4 className="text-xl font-bold text-slate-900">Vous avez un projet ou une demande spécifique ?</h4>
             <p className="text-xs text-slate-600 font-medium">Impression en grand volume, abonnement mensuel ou formation d'équipe entreprise.</p>
           </div>
-          
+
           <button
             onClick={onOpenQuoteModal}
             className="px-6 py-3 text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 rounded-xl shadow-lg shadow-sky-500/25 flex items-center gap-2 cursor-pointer flex-shrink-0"

@@ -59,22 +59,22 @@ export default function Activities() {
   ];
 
   return (
-    <section id="activities" className="py-24 bg-white relative overflow-hidden">
-      
+    <section id="activities" className="py-24 bg-[url('/images/back.jpg')] bg-cover bg-center bg-no-repeat relative overflow-hidden">
+
       {/* Background Decorative Mesh */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sky-50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
             Domaines d'Intervention
           </span>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-50 tracking-tight">
             Des Solutions Dédiées à <span className="text-gradient">Chaque Profil</span>
           </h2>
-          <p className="mt-4 text-slate-600 text-base sm:text-lg font-medium">
+          <p className="mt-4 text-slate-50 text-base sm:text-lg font-medium">
             Quel que soit votre domaine ou votre niveau, nous vous proposons un accompagnement ciblé et adapté.
           </p>
         </div>

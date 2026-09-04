@@ -41,7 +41,7 @@ export default function Portfolio() {
       title: 'Acceuil de client pour la navigation sur internet',
       category: 'espace',
       categoryLabel: 'Espace PC & Equipements',
-      image: '/images/cy.jpg',
+      image: '/images/cyb.jpg',
       description: 'Au total plus de 6 000 clients. Ambiance chaleureuse et conviviale pour la navigation sur internet .',
       date: 'En continu',
     },

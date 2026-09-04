@@ -23,7 +23,7 @@ export default function Footer({ onOpenQuoteModal }: FooterProps) {
   };
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 relative overflow-hidden">
+    <footer className="bg-neutral-900 border-t border-slate-800 text-slate-400 relative overflow-hidden">
 
       {/* Background Subtle Mesh */}
       <div className="absolute inset-0 bg-mesh-pattern opacity-10 pointer-events-none" />

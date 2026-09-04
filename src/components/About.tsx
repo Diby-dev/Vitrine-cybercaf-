@@ -6,12 +6,12 @@ import { HeartHandshake, ShieldCheck, Cpu, Users, Target, CheckCircle } from 'lu
 export default function About() {
   return (
     <section id="about" className="py-24 bg-white relative overflow-hidden">
-      
+
       {/* Background Glow */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-sky-100 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
@@ -21,13 +21,13 @@ export default function About() {
             Un Espace de Proximité Dédié au <span className="text-gradient">Numérique pour Tous</span>
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg font-medium">
-            Depuis plus de 12 ans, notre cyber café s'est imposé comme le partenaire technologique de référence pour les particuliers, étudiants et professionnels.
+            Depuis plus de 4 ans, notre cyber café s'est imposé comme le partenaire technologique de référence pour les particuliers, étudiants et professionnels.
           </p>
         </div>
 
         {/* Story & Team Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          
+
           {/* Text Content */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
@@ -71,7 +71,7 @@ export default function About() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-              
+
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 border border-slate-200 shadow-lg backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="p-3 rounded-lg bg-sky-600 text-white font-bold">
