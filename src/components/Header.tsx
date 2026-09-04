@@ -29,40 +29,39 @@ export default function Header({ onOpenQuoteModal }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-[#1e40af]/95 backdrop-blur-md py-3 shadow-lg border-b border-white/10'
           : 'bg-transparent py-6'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
-          {/* Left Navigation Links (Exact placement like Darle header) */}
-          <nav className="hidden lg:flex items-center gap-8">
+
+          {/* Left Navigation Links avec contour pilule arrondi transparent */}
+          <nav className="hidden lg:flex items-center gap-3">
             {leftNavLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-semibold text-white/90 hover:text-white transition-colors tracking-wide"
+                className="px-4 py-1.5 text-xs font-semibold text-white/90 hover:text-white border border-white/30 hover:border-white rounded-full transition-all tracking-wide backdrop-blur-xs"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Center Logo in Pill Outline Oval Badge (Exact Darle style logo) */}
+          {/* Center Logo in Pill Outline Oval Badge */}
           <a href="#hero" className="flex items-center justify-center group">
-            <div className="px-5 py-1 rounded-full border-1.5 border-white/80 hover:border-white text-white font-black tracking-widest text-sm uppercase transition-all shadow-xs group-hover:scale-105">
+            <div className="px-5 py-1.5 rounded-full border border-white/80 hover:border-white text-white font-black tracking-widest text-sm uppercase transition-all shadow-xs group-hover:scale-105">
               CYBERTECH
             </div>
           </a>
 
-          {/* Right Action Button (Exact Darle pill button style) */}
+          {/* Right Action Button */}
           <div className="hidden sm:flex items-center gap-4">
             <button
               onClick={onOpenQuoteModal}
-              className="px-6 py-2 text-xs font-bold text-white border-1.5 border-white/80 hover:bg-white hover:text-[#1e3a8a] rounded-full transition-all tracking-wide cursor-pointer shadow-xs transform active:scale-95 flex items-center gap-2"
+              className="px-6 py-2 text-xs font-bold text-white border border-white/80 hover:bg-white hover:text-[#1e3a8a] rounded-full transition-all tracking-wide cursor-pointer shadow-xs transform active:scale-95 flex items-center gap-2"
             >
               <Calculator className="w-3.5 h-3.5" />
               <span>Demander un devis</span>
@@ -93,13 +92,13 @@ export default function Header({ onOpenQuoteModal }: HeaderProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#1e40af] border-b border-white/20 px-6 pt-4 pb-6 mt-3 shadow-2xl">
-          <div className="flex flex-col gap-4 text-center">
+          <div className="flex flex-col gap-3 text-center">
             {leftNavLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-semibold text-white/90 hover:text-white py-1 border-b border-white/10"
+                className="py-2 text-sm font-semibold text-white/90 hover:text-white border border-white/20 rounded-full"
               >
                 {link.name}
               </a>
