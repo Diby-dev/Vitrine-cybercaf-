@@ -1,6 +1,7 @@
 'use client';
 
 import { UserCheck, GraduationCap, Briefcase, Building2, CheckCircle2 } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Activities() {
   const domains = [
@@ -67,57 +68,60 @@ export default function Activities() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
-            Domaines d'Intervention
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-50 tracking-tight">
-            Des Solutions Dédiées à <span className="text-gradient">Chaque Profil</span>
-          </h2>
-          <p className="mt-4 text-slate-50 text-base sm:text-lg font-medium">
-            Quel que soit votre domaine ou votre niveau, nous vous proposons un accompagnement ciblé et adapté.
-          </p>
-        </div>
+        <ScrollReveal variant="fade-down">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
+              Domaines d'Intervention
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-50 tracking-tight">
+              Des Solutions Dédiées à <span className="text-gradient">Chaque Profil</span>
+            </h2>
+            <p className="mt-4 text-slate-50 text-base sm:text-lg font-medium">
+              Quel que soit votre domaine ou votre niveau, nous vous proposons un accompagnement ciblé et adapté.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {domains.map((domain) => {
+          {domains.map((domain, idx) => {
             const Icon = domain.icon;
+            // Alternating animation directions
+            const variant = idx % 2 === 0 ? 'fade-right' : 'fade-left';
             return (
-              <div
-                key={domain.id}
-                className="bg-slate-50 hover:bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-xl transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Top Bar */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="p-3 rounded-xl bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors font-bold">
-                      <Icon className="w-7 h-7" />
-                    </div>
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 shadow-xs">
-                      {domain.badge}
-                    </span>
-                  </div>
-
-                  {/* Title & Description */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">
-                    {domain.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium">
-                    {domain.description}
-                  </p>
-
-                  {/* Perks */}
-                  <div className="space-y-2.5 border-t border-slate-200 pt-4">
-                    {domain.perks.map((perk, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs font-semibold text-slate-800">
-                        <CheckCircle2 className="w-4 h-4 text-sky-600 flex-shrink-0" />
-                        <span>{perk}</span>
+              <ScrollReveal key={domain.id} variant={variant} delay={idx * 0.15}>
+                <div className="bg-slate-50 hover:bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-xl transition-all flex flex-col justify-between group h-full">
+                  <div>
+                    {/* Top Bar */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="p-3 rounded-xl bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors font-bold">
+                        <Icon className="w-7 h-7" />
                       </div>
-                    ))}
+                      <span className="text-xs font-bold px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 shadow-xs">
+                        {domain.badge}
+                      </span>
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">
+                      {domain.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium">
+                      {domain.description}
+                    </p>
+
+                    {/* Perks */}
+                    <div className="space-y-2.5 border-t border-slate-200 pt-4">
+                      {domain.perks.map((perk, pIdx) => (
+                        <div key={pIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                          <CheckCircle2 className="w-4 h-4 text-sky-600 flex-shrink-0" />
+                          <span>{perk}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>
