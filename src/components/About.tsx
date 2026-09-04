@@ -12,13 +12,13 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
+        {/* Section Header - Aligné à gauche sur PC */}
+        <div className="text-left max-w-3xl mb-16">
+          <span className="inline-block text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
             Qui Sommes-Nous
           </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Un Espace de Proximité Dédié au <span className="text-gradient">Numérique pour Tous</span>
+            Un Espace de Proximité Dédié au <span className="text-sky-600">Numérique pour Tous</span>
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg font-medium">
             Depuis plus de 4 ans, notre cyber café s'est imposé comme le partenaire technologique de référence pour les particuliers, étudiants et professionnels.
@@ -26,7 +26,7 @@ export default function About() {
         </div>
 
         {/* Story & Team Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
 
           {/* Text Content */}
           <div className="space-y-6">
@@ -61,11 +61,16 @@ export default function About() {
             </div>
           </div>
 
-          {/* Visual Showcase Box */}
-          <div className="relative">
+          {/* Visual Showcase Box avec cadre fond blanc / bordure orange décalé à droite */}
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none pt-4 sm:pt-0">
+
+            {/* Cadre de fond (fond blanc, bordure orange) décalé vers la droite et le bas */}
+            <div className="absolute -bottom-6 -right-6 w-full h-96 sm:h-[420px] rounded-lg bg-white border-2 border-orange-500 shadow-lg hidden sm:block pointer-events-none" />
+
+            {/* Image principale (position de base) */}
             <div className="relative h-96 sm:h-[420px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-xl group">
               <Image
-                src="/images/training.jpg"
+                src="/images/cybe.jpg"
                 alt="Accompagnement et formation informatique"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -84,6 +89,7 @@ export default function About() {
                 </div>
               </div>
             </div>
+
           </div>
 
         </div>
