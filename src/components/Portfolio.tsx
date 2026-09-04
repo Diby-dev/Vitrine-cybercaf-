@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { ZoomIn, X, CheckCircle, Eye } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState<string>('all');
@@ -61,90 +62,95 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
-            Portfolio & Exemples de Projets
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-50 tracking-tight">
-            Galerie de nos <span className="text-gradient">Réalisations Récentes</span>
-          </h2>
-          <p className="mt-4 text-slate-50 text-base sm:text-lg font-medium">
-            Découvrez en images la qualité de nos travaux d'imprimerie, de rédaction et l'ambiance de nos espaces de travail.
-          </p>
-        </div>
+        <ScrollReveal variant="fade-down">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
+              Portfolio & Exemples de Projets
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-50 tracking-tight">
+              Galerie de nos <span className="text-gradient">Réalisations Récentes</span>
+            </h2>
+            <p className="mt-4 text-slate-50 text-base sm:text-lg font-medium">
+              Découvrez en images la qualité de nos travaux d'imprimerie, de rédaction et l'ambiance de nos espaces de travail.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {[
-            { id: 'all', label: 'Toutes les réalisations' },
-            { id: 'impression', label: 'Impression & Reliure' },
-            { id: 'formation', label: 'Formations Office' },
-            { id: 'redaction', label: 'Documents Rédigés' },
-            { id: 'espace', label: 'Espace & Equipements' },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 text-xs font-bold rounded-full border transition-all cursor-pointer ${activeTab === tab.id
-                ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-500/20'
-                : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-sky-300'
-                }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+        <ScrollReveal variant="fade-up" delay={0.1}>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+            {[
+              { id: 'all', label: 'Toutes les réalisations' },
+              { id: 'impression', label: 'Impression & Reliure' },
+              { id: 'formation', label: 'Formations Office' },
+              { id: 'redaction', label: 'Documents Rédigés' },
+              { id: 'espace', label: 'Espace & Equipements' },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 py-2 text-xs font-bold rounded-full border transition-all cursor-pointer ${activeTab === tab.id
+                  ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-500/20'
+                  : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-sky-300'
+                  }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Portfolio Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedImage(item)}
-              className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-sky-300 group cursor-pointer flex flex-col justify-between transition-all"
-            >
-              <div>
-                {/* Image Container */}
-                <div className="relative h-56 w-full overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+          {filteredItems.map((item, idx) => (
+            <ScrollReveal key={item.id} variant="zoom-in" delay={idx * 0.12}>
+              <div
+                onClick={() => setSelectedImage(item)}
+                className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-sky-300 group cursor-pointer flex flex-col justify-between transition-all h-full"
+              >
+                <div>
+                  {/* Image Container */}
+                  <div className="relative h-56 w-full overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
 
-                  {/* Category Tag */}
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-sky-700 text-[11px] font-bold shadow-sm">
-                    {item.categoryLabel}
-                  </div>
+                    {/* Category Tag */}
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-sky-700 text-[11px] font-bold shadow-sm">
+                      {item.categoryLabel}
+                    </div>
 
-                  {/* Zoom Overlay Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/30 backdrop-blur-xs">
-                    <div className="p-3 rounded-full bg-sky-600 text-white shadow-lg">
-                      <Eye className="w-6 h-6" />
+                    {/* Zoom Overlay Icon */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/30 backdrop-blur-xs">
+                      <div className="p-3 rounded-full bg-sky-600 text-white shadow-lg">
+                        <Eye className="w-6 h-6" />
+                      </div>
                     </div>
                   </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-slate-600 line-clamp-2 font-medium">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 line-clamp-2 font-medium">
-                    {item.description}
-                  </p>
+                <div className="px-6 pb-6 pt-0 flex items-center justify-between text-[11px] text-slate-400 font-medium border-t border-slate-100 mt-2">
+                  <span>{item.date}</span>
+                  <span className="text-sky-600 font-bold flex items-center gap-1">
+                    Agrandir <ZoomIn className="w-3 h-3" />
+                  </span>
                 </div>
               </div>
-
-              <div className="px-6 pb-6 pt-0 flex items-center justify-between text-[11px] text-slate-400 font-medium border-t border-slate-100 mt-2">
-                <span>{item.date}</span>
-                <span className="text-sky-600 font-bold flex items-center gap-1">
-                  Agrandir <ZoomIn className="w-3 h-3" />
-                </span>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 

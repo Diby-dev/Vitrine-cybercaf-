@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Calculator, ArrowRight, Sparkles } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 interface HeroProps {
   onOpenQuoteModal: () => void;
@@ -37,40 +38,48 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
           <div className="lg:col-span-7 space-y-6 text-left">
 
             {/* Top Pill Tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#fef08a] text-xs font-bold tracking-wider uppercase backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Cyber Café & Espace Numérique</span>
-            </div>
+            <ScrollReveal variant="fade-down" delay={0.1}>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#fef08a] text-xs font-bold tracking-wider uppercase backdrop-blur-md">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Cyber Café & Espace Numérique</span>
+              </div>
+            </ScrollReveal>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-serif font-semibold tracking-tight text-[#fef08a] leading-[1.1]">
-              Un espace numérique <br />
-              <span className="font-sans font-extrabold text-white">à votre écoute</span>
-            </h1>
+            <ScrollReveal variant="fade-right" delay={0.2}>
+              <h1 className="text-4xl sm:text-5xl lg:text-5xl font-serif font-semibold tracking-tight text-[#fef08a] leading-[1.1]">
+                Un espace numérique <br />
+                <span className="font-sans font-extrabold text-white">à votre écoute</span>
+              </h1>
+            </ScrollReveal>
 
             {/* Subtitle Paragraph */}
-            <p className="text-base sm:text-lg text-blue-100 max-w-2xl font-normal leading-relaxed">
-              Découvrez <strong className="text-white font-semibold">BENICYTECH</strong>, l'espace informatique intelligent qui s'adapte intuitivement à vos besoins : navigation haut débit, formations Excel & Word, impression HD et rédaction de vos documents officiels.
-            </p>
+            <ScrollReveal variant="fade-right" delay={0.3}>
+              <p className="text-base sm:text-lg text-blue-100 max-w-2xl font-normal leading-relaxed">
+                Découvrez <strong className="text-white font-semibold">BENICYTECH</strong>, l'espace informatique intelligent qui s'adapte intuitivement à vos besoins : navigation haut débit, formations Excel & Word, impression HD et rédaction de vos documents officiels.
+              </p>
+            </ScrollReveal>
 
             {/* Bottom CTAs */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenQuoteModal}
-                className="px-8 py-3.5 text-sm font-bold text-[#1e3a8a] bg-[#fef08a] hover:bg-yellow-200 rounded-full shadow-lg shadow-blue-950/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2.5"
-              >
-                <Calculator className="w-4 h-4" />
-                <span>Demander un devis</span>
-              </button>
+            <ScrollReveal variant="fade-up" delay={0.4}>
+              <div className="pt-4 flex flex-wrap items-center gap-4">
+                <button
+                  onClick={onOpenQuoteModal}
+                  className="px-8 py-3.5 text-sm font-bold text-[#1e3a8a] bg-[#fef08a] hover:bg-yellow-200 rounded-full shadow-lg shadow-blue-950/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center gap-2.5"
+                >
+                  <Calculator className="w-4 h-4" />
+                  <span>Demander un devis</span>
+                </button>
 
-              <a
-                href="#services"
-                className="px-7 py-3.5 text-sm font-semibold text-white border border-white/30 hover:border-white rounded-full transition-all flex items-center gap-2 backdrop-blur-sm"
-              >
-                <span>Nos services</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+                <a
+                  href="#services"
+                  className="px-7 py-3.5 text-sm font-semibold text-white border border-white/30 hover:border-white rounded-full transition-all flex items-center gap-2 backdrop-blur-sm"
+                >
+                  <span>Nos services</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </ScrollReveal>
           </div>
 
         </div>

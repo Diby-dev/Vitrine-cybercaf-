@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { Monitor, BookOpen, Printer, FileText, Gamepad2, ArrowRight, Calculator, Check } from 'lucide-react';
+import { Monitor, BookOpen, Printer, FileText, ArrowRight, Calculator, Check } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 interface ServicesProps {
   onOpenQuoteModal: () => void;
@@ -69,7 +70,6 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
         'Confidentialité absolue garantie par contrat d\'engagement',
       ],
     },
-
   ];
 
   return (
@@ -81,100 +81,110 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
-            Nos Prestations & Tarifs
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Des Services Adaptés à <span className="text-gradient">Chacun de Vos Besoins</span>
-          </h2>
-          <p className="mt-4 text-slate-900 text-base sm:text-lg font-medium">
-            Découvrez nos 5 pôles d'activités conçus pour répondre efficacement aux exigences des particuliers, étudiants et entreprises.
-          </p>
-        </div>
+        <ScrollReveal variant="fade-down">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 px-3 py-1 rounded-full bg-sky-50 border border-sky-200">
+              Nos Prestations & Tarifs
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+              Des Services Adaptés à <span className="text-gradient">Chacun de Vos Besoins</span>
+            </h2>
+            <p className="mt-4 text-slate-900 text-base sm:text-lg font-medium">
+              Découvrez nos 5 pôles d'activités conçus pour répondre efficacement aux exigences des particuliers, étudiants et entreprises.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Services List Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((service) => {
+          {servicesList.map((service, idx) => {
             const Icon = service.icon;
+            // Varied animation per card
+            const variants: ('fade-up' | 'fade-right' | 'fade-left' | 'zoom-in')[] = [
+              'fade-right',
+              'fade-up',
+              'fade-left',
+              'zoom-in',
+            ];
             return (
-              <div
-                key={service.id}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl hover:border-sky-300 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Image Container */}
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+              <ScrollReveal key={service.id} variant={variants[idx % variants.length]} delay={idx * 0.15}>
+                <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl hover:border-sky-300 transition-all flex flex-col justify-between group h-full">
+                  <div>
+                    {/* Image Container */}
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
 
-                    {/* Floating Badge */}
-                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-sky-700 text-xs font-bold shadow-md">
-                      {service.price}
+                      {/* Floating Badge */}
+                      <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-sky-700 text-xs font-bold shadow-md">
+                        {service.price}
+                      </div>
+
+                      {/* Icon */}
+                      <div className="absolute bottom-3 left-4 p-2.5 rounded-xl bg-sky-600 text-white shadow-md">
+                        <Icon className="w-6 h-6" />
+                      </div>
                     </div>
 
-                    {/* Icon */}
-                    <div className="absolute bottom-3 left-4 p-2.5 rounded-xl bg-sky-600 text-white shadow-md">
-                      <Icon className="w-6 h-6" />
+                    {/* Text Content */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-slate-600 leading-relaxed font-medium">
+                        {service.subtitle}
+                      </p>
+
+                      {/* Features List */}
+                      <ul className="mt-6 space-y-2.5 border-t border-slate-100 pt-4">
+                        {service.features.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
+                            <Check className="w-4 h-4 text-sky-600 flex-shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
 
-                  {/* Text Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-slate-600 leading-relaxed font-medium">
-                      {service.subtitle}
-                    </p>
-
-                    {/* Features List */}
-                    <ul className="mt-6 space-y-2.5 border-t border-slate-100 pt-4">
-                      {service.features.map((feat, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
-                          <Check className="w-4 h-4 text-sky-600 flex-shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Bottom CTA */}
+                  <div className="p-6 pt-0">
+                    <button
+                      onClick={onOpenQuoteModal}
+                      className="w-full py-2.5 text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-600 hover:text-white border border-sky-200 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <Calculator className="w-4 h-4" />
+                      <span>Estimer / Réserver ce service</span>
+                    </button>
                   </div>
                 </div>
-
-                {/* Bottom CTA */}
-                <div className="p-6 pt-0">
-                  <button
-                    onClick={onOpenQuoteModal}
-                    className="w-full py-2.5 text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-600 hover:text-white border border-sky-200 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <Calculator className="w-4 h-4" />
-                    <span>Estimer / Réserver ce service</span>
-                  </button>
-                </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-16 p-8 rounded-2xl bg-white border border-slate-200 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-xl font-bold text-slate-900">Vous avez un projet ou une demande spécifique ?</h4>
-            <p className="text-xs text-slate-600 font-medium">Impression en grand volume, abonnement mensuel ou formation d'équipe entreprise.</p>
-          </div>
+        <ScrollReveal variant="fade-up" delay={0.4}>
+          <div className="mt-16 p-8 rounded-2xl bg-white border border-slate-200 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="space-y-1 text-center sm:text-left">
+              <h4 className="text-xl font-bold text-slate-900">Vous avez un projet ou une demande spécifique ?</h4>
+              <p className="text-xs text-slate-600 font-medium">Impression en grand volume, abonnement mensuel ou formation d'équipe entreprise.</p>
+            </div>
 
-          <button
-            onClick={onOpenQuoteModal}
-            className="px-6 py-3 text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 rounded-xl shadow-lg shadow-sky-500/25 flex items-center gap-2 cursor-pointer flex-shrink-0"
-          >
-            <span>Obtenir un devis personnalisé</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+            <button
+              onClick={onOpenQuoteModal}
+              className="px-6 py-3 text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 rounded-xl shadow-lg shadow-sky-500/25 flex items-center gap-2 cursor-pointer flex-shrink-0"
+            >
+              <span>Obtenir un devis personnalisé</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </ScrollReveal>
 
       </div>
     </section>
