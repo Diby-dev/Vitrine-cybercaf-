@@ -114,7 +114,7 @@ export default function Services({ onOpenQuoteModal }: ServicesProps) {
                     <div className="relative h-48 w-full overflow-hidden">
                       <Image
                         src={service.image}
-                        alt={service.title}
+                        alt={`${service.title} - Benicytech Cybercafé Yopougon Micao`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />

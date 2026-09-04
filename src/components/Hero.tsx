@@ -18,7 +18,7 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
       <div className="fixed inset-0 z-0 bg-slate-950 pointer-events-none">
         <Image
           src="/images/cybe.jpg"
-          alt="Espace Cyber Cafe Benicytech"
+          alt="Benicytech - Cybercafé et Espace Numérique à Abidjan Yopougon Micao"
           fill
           priority
           sizes="100vw"

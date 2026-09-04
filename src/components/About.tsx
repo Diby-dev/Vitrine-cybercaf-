@@ -77,7 +77,7 @@ export default function About() {
               <div className="relative h-96 sm:h-[420px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-xl group">
                 <Image
                   src="/images/cybe.jpg"
-                  alt="Accompagnement et formation informatique"
+                  alt="Accompagnement et formation informatique Excel Word Benicytech à Yopougon Micao"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />

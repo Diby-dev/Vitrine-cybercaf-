@@ -113,7 +113,7 @@ export default function Portfolio() {
                   <div className="relative h-56 w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.title} - Benicytech Yopougon`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -169,7 +169,7 @@ export default function Portfolio() {
             <div className="relative h-80 sm:h-96 w-full">
               <Image
                 src={selectedImage.image}
-                alt={selectedImage.title}
+                alt={`${selectedImage.title} - Benicytech Yopougon`}
                 fill
                 className="object-cover"
               />
