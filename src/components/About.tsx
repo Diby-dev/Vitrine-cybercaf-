@@ -18,7 +18,7 @@ export default function About() {
             Qui Sommes-Nous
           </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Un Espace de Proximité Dédié au <span className="text-sky-600">Numérique pour Tous</span>
+            Un Espace de Proximité Dédié au <span className="text-green-700">Numérique pour Tous</span>
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg font-medium">
             Depuis plus de 4 ans, notre cyber café s'est imposé comme le partenaire technologique de référence pour les particuliers, étudiants et professionnels.

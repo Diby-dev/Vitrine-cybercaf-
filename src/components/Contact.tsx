@@ -91,8 +91,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs font-bold uppercase tracking-wider text-slate-500">Adresse E-mail</span>
-                  <a href="mailto:contact@cybertech-lounge.fr" className="text-sm font-semibold text-slate-800 hover:text-sky-600 transition-colors">
-                    cybertech200@gmail.com
+                  <a href="mailto:benicytech200@gmail.com" className="text-sm font-semibold text-slate-800 hover:text-sky-600 transition-colors">
+                    benicytech200@gmail.com
                   </a>
                 </div>
               </div>

@@ -39,7 +39,7 @@ export default function MapSection() {
             </div>
 
             <div className="bg-white/95 backdrop-blur-md p-4 rounded-xl border border-slate-200 inline-block max-w-md shadow-lg">
-              <span className="text-xs font-bold text-sky-700 block uppercase tracking-wider">CYBERTECH LOUNGE</span>
+              <span className="text-xs font-bold text-sky-700 block uppercase tracking-wider">BENICYTECH LOUNGE</span>
               <p className="text-sm font-bold text-slate-900 mt-0.5">124 Avenue de la République, 75011 Paris</p>
               <p className="text-xs text-slate-500 font-medium mt-1">À 50 mètres de la Station République</p>
             </div>

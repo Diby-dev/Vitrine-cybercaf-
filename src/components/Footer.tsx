@@ -39,7 +39,7 @@ export default function Footer({ onOpenQuoteModal }: FooterProps) {
                 <Monitor className="w-6 h-6" />
               </div>
               <span className="text-xl font-extrabold tracking-wider text-white">
-                CYBER<span className="text-sky-400">TECH</span>
+                Benicy<span className="text-sky-400">tech</span>
               </span>
             </a>
 
@@ -80,7 +80,7 @@ export default function Footer({ onOpenQuoteModal }: FooterProps) {
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Contact</h4>
             <ul className="space-y-2.5 text-xs font-medium">
               <li><a href="" className="hover:text-sky-400 transition-colors">06 76 19 08 97</a></li>
-              <li><a href="" className="hover:text-sky-400 transition-colors">cybertech200@gmail.com</a></li>
+              <li><a href="" className="hover:text-sky-400 transition-colors">benicytech200@gmail.com</a></li>
             </ul>
           </div>
 
@@ -123,7 +123,7 @@ export default function Footer({ onOpenQuoteModal }: FooterProps) {
         {/* Bottom copyright & legal */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-medium">
           <div>
-            © {new Date().getFullYear()} CYBERTECH Lounge. Tous droits réservés.
+            © {new Date().getFullYear()} Benicytech Lounge. Tous droits réservés.
           </div>
 
           <div className="flex items-center gap-6">
@@ -171,7 +171,7 @@ export default function Footer({ onOpenQuoteModal }: FooterProps) {
             </div>
 
             <p>
-              <strong>Éditeur du site :</strong> CYBERTECH Espace Numérique SARL.<br />
+              <strong>Éditeur du site :</strong> Benicytech Espace Numérique SARL.<br />
               <strong>Siège social :</strong> 124 Avenue de la République, 75011 Paris.<br />
               <strong>Directeur de la publication :</strong> Service Communication.
             </p>

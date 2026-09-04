@@ -17,7 +17,7 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
       <div className="fixed inset-0 z-0 bg-slate-950 pointer-events-none">
         <Image
           src="/images/cybe.jpg"
-          alt="Espace Cyber Cafe Cybertech"
+          alt="Espace Cyber Cafe Benicytech"
           fill
           priority
           sizes="100vw"
@@ -50,7 +50,7 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
 
             {/* Subtitle Paragraph */}
             <p className="text-base sm:text-lg text-blue-100 max-w-2xl font-normal leading-relaxed">
-              Découvrez <strong className="text-white font-semibold">CYBERTECH</strong>, l'espace informatique intelligent qui s'adapte intuitivement à vos besoins : navigation haut débit, formations Excel & Word, impression HD et rédaction de vos documents officiels.
+              Découvrez <strong className="text-white font-semibold">BENICYTECH</strong>, l'espace informatique intelligent qui s'adapte intuitivement à vos besoins : navigation haut débit, formations Excel & Word, impression HD et rédaction de vos documents officiels.
             </p>
 
             {/* Bottom CTAs */}

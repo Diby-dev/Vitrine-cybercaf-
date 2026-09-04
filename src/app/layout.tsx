@@ -9,7 +9,7 @@ const sansFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CYBERTECH Lounge & Services | Cyber Café, Formations Excel/Word & Imprimerie HD",
+  title: "BENICYTECH Lounge & Services | Cyber Café, Formations Excel/Word & Imprimerie HD",
   description:
     "Cyber café moderne & espace numérique haut de gamme : accès PC fibre optique 1Gbps, formations bureautiques guidées (Excel, Word, Windows), centre d'imprimerie couleur & reliure, et rédaction professionnelle de documents.",
   keywords: [

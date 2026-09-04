@@ -53,7 +53,7 @@ export default function Header({ onOpenQuoteModal }: HeaderProps) {
           {/* Center Logo in Pill Outline Oval Badge */}
           <a href="#hero" className="flex items-center justify-center group">
             <div className="px-5 py-1.5 rounded-full border border-white/80 hover:border-white text-white font-black tracking-widest text-sm uppercase transition-all shadow-xs group-hover:scale-105">
-              CYBERTECH
+              BENICYTECH
             </div>
           </a>
 
